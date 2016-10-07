@@ -21,5 +21,25 @@ namespace Snippetgrab
             Name = name;
             JoinDate = joindate;
         }
+
+        public void ChangePassword(string password)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void ChangeEmail(string email)
+        {
+            Email = email;
+        }
+
+        public void AddReputation()
+        {
+            Reputation++;
+        }
+
+        public void ChangeAdminStatus(bool status)
+        {
+            IsAdmin = status;
+        }
     }
 }
