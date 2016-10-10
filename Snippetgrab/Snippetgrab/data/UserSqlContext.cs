@@ -17,7 +17,7 @@ namespace Snippetgrab.data
     {
         private SqlConnection Connection;
         private readonly string sqlCon = @"Data Source = (LocalDB)\MSSQLLocalDB;" +
-                @"AttachDbFilename = C:\Program Files\Microsoft SQL Server\MSSQL12.MSSQLSERVER\MSSQL\DATA\Snippetgrab.mdf;
+                @"AttachDbFilename = C:\Users\max1_\Source\Repos\Snippetgrab\Snippetgrab\database Backup\Snippetgrab.mdf;
                             Integrated Security = True;
                             Connect Timeout=30";
 
