@@ -27,7 +27,7 @@ namespace Snippetgrab.data
             User user;
             using (Connection)
             {
-                string query = "SELECT * FROM [User] WHERE Email = @email";
+                string query = "SELECT Password FROM [User] WHERE Email = @email";
                 using (SqlCommand command = new SqlCommand(query, Connection))
                 {
                     SqlParameter param = new SqlParameter();
@@ -38,14 +38,10 @@ namespace Snippetgrab.data
                     Connection.Open();
                     using (SqlDataReader reader = command.ExecuteReader())
                     {
-                        while (reader.Read())
-                        {
-                            user = CreateUserFromReader(reader);
-                            if (user.GetPassword() == password)
-                                return true;
-                            else                            
-                                return false;                            
-                        }
+                        if (Convert.ToString(reader["Password"]) == password)
+                            return true;
+                        else
+                            return false;
                     }
                 }                
             }
@@ -193,7 +189,19 @@ namespace Snippetgrab.data
 
         public bool Remove(User user)
         {
-            throw new NotImplementedException();
+            using (Connection)
+            {
+                string query = "DELETE FROM Student WHERE ID = @id";
+                using (SqlCommand command = new SqlCommand(query, Connection))
+                {
+                    command.Parameters.AddWithValue("id", user.ID);
+                    if (Convert.ToInt32(command.ExecuteNonQuery()) == 1)
+                    {
+                        return true;
+                    }
+                }
+            }
+            return false;
         }
 
         public bool Update(User user)

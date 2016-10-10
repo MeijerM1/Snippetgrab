@@ -22,6 +22,8 @@ namespace Snippetgrab
         private void Form1_Load(object sender, EventArgs e)
         {
             tstbLoggedInUser.Text = currentUser.Name;
+            if (currentUser.IsAdmin)
+                tstbLoggedInUser.Text = tstbLoggedInUser.Text + "(ADMIN)";
             UpdateAccountControls();
         }
 
