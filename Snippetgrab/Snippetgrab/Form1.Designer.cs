@@ -30,77 +30,77 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.lbAccountInfoName = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.lbAccountInfoJoinDate = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
+            this.lbAccountInfoEmail = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             this.lbAccountInfoReputation = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.lbAccountInfoJoinDate = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.lbAccountInfoName = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.lbProblems = new System.Windows.Forms.ListBox();
-            this.lasd = new System.Windows.Forms.Label();
-            this.lael30 = new System.Windows.Forms.Label();
+            this.lbProblemInfoSolved = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.tbProblemInfoComments = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.tbProblemInfoDescription = new System.Windows.Forms.TextBox();
+            this.lbProblemInfoPoints = new System.Windows.Forms.Label();
+            this.lbProblemInfoAuthor = new System.Windows.Forms.Label();
+            this.lbProblemInfoName = new System.Windows.Forms.Label();
+            this.Description = new System.Windows.Forms.Label();
             this.lavel = new System.Windows.Forms.Label();
+            this.lael30 = new System.Windows.Forms.Label();
+            this.lasd = new System.Windows.Forms.Label();
+            this.lbProblems = new System.Windows.Forms.ListBox();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.toolStripDropDownButton1 = new System.Windows.Forms.ToolStripDropDownButton();
             this.accountInfoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.logOffToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripDropDownButton2 = new System.Windows.Forms.ToolStripDropDownButton();
-            this.toolStripDropDownButton3 = new System.Windows.Forms.ToolStripDropDownButton();
-            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.viewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.allToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.unsolvedToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.solvedToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.addNewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripDropDownButton3 = new System.Windows.Forms.ToolStripDropDownButton();
             this.viewToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.allToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.personalToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.addToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
+            this.tstbLoggedInUser = new System.Windows.Forms.ToolStripTextBox();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tpAccount = new System.Windows.Forms.TabPage();
-            this.tpProblem = new System.Windows.Forms.TabPage();
-            this.tbSnippet = new System.Windows.Forms.TabPage();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.lbAccountInfoSnippets = new System.Windows.Forms.ListBox();
-            this.lab = new System.Windows.Forms.Label();
-            this.lb = new System.Windows.Forms.Label();
-            this.lbAccountSnippetName = new System.Windows.Forms.Label();
-            this.lbAccountSnippetPoints = new System.Windows.Forms.Label();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.lbAccountProblemSolved = new System.Windows.Forms.Label();
+            this.lbael10 = new System.Windows.Forms.Label();
             this.lbAccountProblemPoints = new System.Windows.Forms.Label();
             this.lbAccountProblemName = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.lbAccountInfoProblems = new System.Windows.Forms.ListBox();
-            this.lbael10 = new System.Windows.Forms.Label();
-            this.lbAccountProblemSolved = new System.Windows.Forms.Label();
-            this.Description = new System.Windows.Forms.Label();
-            this.lbProblemInfoName = new System.Windows.Forms.Label();
-            this.lbProblemInfoAuthor = new System.Windows.Forms.Label();
-            this.lbProblemInfoPoints = new System.Windows.Forms.Label();
-            this.tbProblemInfoDescription = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.lbAccountInfoEmail = new System.Windows.Forms.Label();
-            this.tstbLoggedInUser = new System.Windows.Forms.ToolStripTextBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.tbProblemInfoComments = new System.Windows.Forms.TextBox();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.lbAccountSnippetPoints = new System.Windows.Forms.Label();
+            this.lbAccountSnippetName = new System.Windows.Forms.Label();
+            this.lb = new System.Windows.Forms.Label();
+            this.lab = new System.Windows.Forms.Label();
+            this.lbAccountInfoSnippets = new System.Windows.Forms.ListBox();
+            this.tpProblem = new System.Windows.Forms.TabPage();
             this.gbAddNewProblem = new System.Windows.Forms.GroupBox();
-            this.label8 = new System.Windows.Forms.Label();
+            this.btAddNewProblemSave = new System.Windows.Forms.Button();
+            this.tbAddNewProblemName = new System.Windows.Forms.TextBox();
             this.tbAddNewProblemDiscription = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
-            this.tbAddNewProblemName = new System.Windows.Forms.TextBox();
-            this.btAddNewProblemSave = new System.Windows.Forms.Button();
-            this.label10 = new System.Windows.Forms.Label();
-            this.lbProblemInfoSolved = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.tbSnippet = new System.Windows.Forms.TabPage();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.toolStrip1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tpAccount.SuspendLayout();
-            this.tpProblem.SuspendLayout();
-            this.groupBox3.SuspendLayout();
             this.groupBox4.SuspendLayout();
+            this.groupBox3.SuspendLayout();
+            this.tpProblem.SuspendLayout();
             this.gbAddNewProblem.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -121,23 +121,50 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Account Info";
             // 
-            // label1
+            // lbAccountInfoEmail
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(6, 37);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(38, 13);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Name:";
+            this.lbAccountInfoEmail.AutoSize = true;
+            this.lbAccountInfoEmail.Location = new System.Drawing.Point(6, 177);
+            this.lbAccountInfoEmail.Name = "lbAccountInfoEmail";
+            this.lbAccountInfoEmail.Size = new System.Drawing.Size(63, 13);
+            this.lbAccountInfoEmail.TabIndex = 7;
+            this.lbAccountInfoEmail.Text = "test@test.nl";
             // 
-            // lbAccountInfoName
+            // label4
             // 
-            this.lbAccountInfoName.AutoSize = true;
-            this.lbAccountInfoName.Location = new System.Drawing.Point(77, 37);
-            this.lbAccountInfoName.Name = "lbAccountInfoName";
-            this.lbAccountInfoName.Size = new System.Drawing.Size(52, 13);
-            this.lbAccountInfoName.TabIndex = 1;
-            this.lbAccountInfoName.Text = "testName";
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(6, 153);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(35, 13);
+            this.label4.TabIndex = 6;
+            this.label4.Text = "Email:";
+            // 
+            // lbAccountInfoReputation
+            // 
+            this.lbAccountInfoReputation.AutoSize = true;
+            this.lbAccountInfoReputation.Location = new System.Drawing.Point(6, 133);
+            this.lbAccountInfoReputation.Name = "lbAccountInfoReputation";
+            this.lbAccountInfoReputation.Size = new System.Drawing.Size(25, 13);
+            this.lbAccountInfoReputation.TabIndex = 5;
+            this.lbAccountInfoReputation.Text = "100";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(6, 111);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(62, 13);
+            this.label3.TabIndex = 4;
+            this.label3.Text = "Reputation:";
+            // 
+            // lbAccountInfoJoinDate
+            // 
+            this.lbAccountInfoJoinDate.AutoSize = true;
+            this.lbAccountInfoJoinDate.Location = new System.Drawing.Point(6, 84);
+            this.lbAccountInfoJoinDate.Name = "lbAccountInfoJoinDate";
+            this.lbAccountInfoJoinDate.Size = new System.Drawing.Size(35, 13);
+            this.lbAccountInfoJoinDate.TabIndex = 3;
+            this.lbAccountInfoJoinDate.Text = "1/1/4";
             // 
             // label2
             // 
@@ -148,32 +175,23 @@
             this.label2.TabIndex = 2;
             this.label2.Text = "Joined on:";
             // 
-            // lbAccountInfoJoinDate
+            // lbAccountInfoName
             // 
-            this.lbAccountInfoJoinDate.AutoSize = true;
-            this.lbAccountInfoJoinDate.Location = new System.Drawing.Point(77, 61);
-            this.lbAccountInfoJoinDate.Name = "lbAccountInfoJoinDate";
-            this.lbAccountInfoJoinDate.Size = new System.Drawing.Size(35, 13);
-            this.lbAccountInfoJoinDate.TabIndex = 3;
-            this.lbAccountInfoJoinDate.Text = "1/1/4";
+            this.lbAccountInfoName.AutoSize = true;
+            this.lbAccountInfoName.Location = new System.Drawing.Point(77, 37);
+            this.lbAccountInfoName.Name = "lbAccountInfoName";
+            this.lbAccountInfoName.Size = new System.Drawing.Size(52, 13);
+            this.lbAccountInfoName.TabIndex = 1;
+            this.lbAccountInfoName.Text = "testName";
             // 
-            // label3
+            // label1
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(6, 88);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(62, 13);
-            this.label3.TabIndex = 4;
-            this.label3.Text = "Reputation:";
-            // 
-            // lbAccountInfoReputation
-            // 
-            this.lbAccountInfoReputation.AutoSize = true;
-            this.lbAccountInfoReputation.Location = new System.Drawing.Point(77, 88);
-            this.lbAccountInfoReputation.Name = "lbAccountInfoReputation";
-            this.lbAccountInfoReputation.Size = new System.Drawing.Size(25, 13);
-            this.lbAccountInfoReputation.TabIndex = 5;
-            this.lbAccountInfoReputation.Text = "100";
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(6, 37);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(38, 13);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Name:";
             // 
             // groupBox2
             // 
@@ -197,23 +215,96 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Problems";
             // 
-            // lbProblems
+            // lbProblemInfoSolved
             // 
-            this.lbProblems.FormattingEnabled = true;
-            this.lbProblems.Location = new System.Drawing.Point(6, 19);
-            this.lbProblems.Name = "lbProblems";
-            this.lbProblems.Size = new System.Drawing.Size(128, 355);
-            this.lbProblems.TabIndex = 0;
+            this.lbProblemInfoSolved.AutoSize = true;
+            this.lbProblemInfoSolved.Location = new System.Drawing.Point(286, 80);
+            this.lbProblemInfoSolved.Name = "lbProblemInfoSolved";
+            this.lbProblemInfoSolved.Size = new System.Drawing.Size(28, 13);
+            this.lbProblemInfoSolved.TabIndex = 12;
+            this.lbProblemInfoSolved.Text = "Test";
             // 
-            // lasd
+            // label10
             // 
-            this.lasd.AutoSize = true;
-            this.lasd.Location = new System.Drawing.Point(199, 22);
-            this.lasd.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
-            this.lasd.Name = "lasd";
-            this.lasd.Size = new System.Drawing.Size(38, 13);
-            this.lasd.TabIndex = 1;
-            this.lasd.Text = "Name:";
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(199, 80);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(43, 13);
+            this.label10.TabIndex = 11;
+            this.label10.Text = "Solved:";
+            // 
+            // tbProblemInfoComments
+            // 
+            this.tbProblemInfoComments.Location = new System.Drawing.Point(289, 235);
+            this.tbProblemInfoComments.Multiline = true;
+            this.tbProblemInfoComments.Name = "tbProblemInfoComments";
+            this.tbProblemInfoComments.Size = new System.Drawing.Size(129, 114);
+            this.tbProblemInfoComments.TabIndex = 10;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(199, 235);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(59, 13);
+            this.label5.TabIndex = 9;
+            this.label5.Text = "Comments:";
+            // 
+            // tbProblemInfoDescription
+            // 
+            this.tbProblemInfoDescription.Location = new System.Drawing.Point(289, 102);
+            this.tbProblemInfoDescription.Multiline = true;
+            this.tbProblemInfoDescription.Name = "tbProblemInfoDescription";
+            this.tbProblemInfoDescription.Size = new System.Drawing.Size(129, 114);
+            this.tbProblemInfoDescription.TabIndex = 8;
+            // 
+            // lbProblemInfoPoints
+            // 
+            this.lbProblemInfoPoints.AutoSize = true;
+            this.lbProblemInfoPoints.Location = new System.Drawing.Point(286, 58);
+            this.lbProblemInfoPoints.Name = "lbProblemInfoPoints";
+            this.lbProblemInfoPoints.Size = new System.Drawing.Size(28, 13);
+            this.lbProblemInfoPoints.TabIndex = 7;
+            this.lbProblemInfoPoints.Text = "Test";
+            // 
+            // lbProblemInfoAuthor
+            // 
+            this.lbProblemInfoAuthor.AutoSize = true;
+            this.lbProblemInfoAuthor.Location = new System.Drawing.Point(286, 42);
+            this.lbProblemInfoAuthor.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
+            this.lbProblemInfoAuthor.Name = "lbProblemInfoAuthor";
+            this.lbProblemInfoAuthor.Size = new System.Drawing.Size(28, 13);
+            this.lbProblemInfoAuthor.TabIndex = 6;
+            this.lbProblemInfoAuthor.Text = "Test";
+            // 
+            // lbProblemInfoName
+            // 
+            this.lbProblemInfoName.AutoSize = true;
+            this.lbProblemInfoName.Location = new System.Drawing.Point(286, 22);
+            this.lbProblemInfoName.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
+            this.lbProblemInfoName.Name = "lbProblemInfoName";
+            this.lbProblemInfoName.Size = new System.Drawing.Size(28, 13);
+            this.lbProblemInfoName.TabIndex = 5;
+            this.lbProblemInfoName.Text = "Test";
+            // 
+            // Description
+            // 
+            this.Description.AutoSize = true;
+            this.Description.Location = new System.Drawing.Point(199, 102);
+            this.Description.Name = "Description";
+            this.Description.Size = new System.Drawing.Size(63, 13);
+            this.Description.TabIndex = 4;
+            this.Description.Text = "Description:";
+            // 
+            // lavel
+            // 
+            this.lavel.AutoSize = true;
+            this.lavel.Location = new System.Drawing.Point(199, 58);
+            this.lavel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lavel.Name = "lavel";
+            this.lavel.Size = new System.Drawing.Size(39, 13);
+            this.lavel.TabIndex = 3;
+            this.lavel.Text = "Points:";
             // 
             // lael30
             // 
@@ -225,15 +316,23 @@
             this.lael30.TabIndex = 2;
             this.lael30.Text = "Posted by:";
             // 
-            // lavel
+            // lasd
             // 
-            this.lavel.AutoSize = true;
-            this.lavel.Location = new System.Drawing.Point(199, 58);
-            this.lavel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lavel.Name = "lavel";
-            this.lavel.Size = new System.Drawing.Size(39, 13);
-            this.lavel.TabIndex = 3;
-            this.lavel.Text = "Points:";
+            this.lasd.AutoSize = true;
+            this.lasd.Location = new System.Drawing.Point(199, 22);
+            this.lasd.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
+            this.lasd.Name = "lasd";
+            this.lasd.Size = new System.Drawing.Size(38, 13);
+            this.lasd.TabIndex = 1;
+            this.lasd.Text = "Name:";
+            // 
+            // lbProblems
+            // 
+            this.lbProblems.FormattingEnabled = true;
+            this.lbProblems.Location = new System.Drawing.Point(6, 19);
+            this.lbProblems.Name = "lbProblems";
+            this.lbProblems.Size = new System.Drawing.Size(128, 355);
+            this.lbProblems.TabIndex = 0;
             // 
             // toolStrip1
             // 
@@ -266,6 +365,7 @@
             this.accountInfoToolStripMenuItem.Name = "accountInfoToolStripMenuItem";
             this.accountInfoToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.accountInfoToolStripMenuItem.Text = "Account info";
+            this.accountInfoToolStripMenuItem.Click += new System.EventHandler(this.accountInfoToolStripMenuItem_Click);
             // 
             // logOffToolStripMenuItem
             // 
@@ -285,6 +385,40 @@
             this.toolStripDropDownButton2.Size = new System.Drawing.Size(70, 22);
             this.toolStripDropDownButton2.Text = "Problems";
             // 
+            // viewToolStripMenuItem
+            // 
+            this.viewToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.allToolStripMenuItem,
+            this.unsolvedToolStripMenuItem,
+            this.solvedToolStripMenuItem});
+            this.viewToolStripMenuItem.Name = "viewToolStripMenuItem";
+            this.viewToolStripMenuItem.Size = new System.Drawing.Size(121, 22);
+            this.viewToolStripMenuItem.Text = "View";
+            // 
+            // allToolStripMenuItem
+            // 
+            this.allToolStripMenuItem.Name = "allToolStripMenuItem";
+            this.allToolStripMenuItem.Size = new System.Drawing.Size(123, 22);
+            this.allToolStripMenuItem.Text = "All";
+            // 
+            // unsolvedToolStripMenuItem
+            // 
+            this.unsolvedToolStripMenuItem.Name = "unsolvedToolStripMenuItem";
+            this.unsolvedToolStripMenuItem.Size = new System.Drawing.Size(123, 22);
+            this.unsolvedToolStripMenuItem.Text = "Unsolved";
+            // 
+            // solvedToolStripMenuItem
+            // 
+            this.solvedToolStripMenuItem.Name = "solvedToolStripMenuItem";
+            this.solvedToolStripMenuItem.Size = new System.Drawing.Size(123, 22);
+            this.solvedToolStripMenuItem.Text = "Solved";
+            // 
+            // addNewToolStripMenuItem
+            // 
+            this.addNewToolStripMenuItem.Name = "addNewToolStripMenuItem";
+            this.addNewToolStripMenuItem.Size = new System.Drawing.Size(121, 22);
+            this.addNewToolStripMenuItem.Text = "Add new";
+            // 
             // toolStripDropDownButton3
             // 
             this.toolStripDropDownButton3.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
@@ -297,6 +431,33 @@
             this.toolStripDropDownButton3.Size = new System.Drawing.Size(65, 22);
             this.toolStripDropDownButton3.Text = "Snippets";
             // 
+            // viewToolStripMenuItem1
+            // 
+            this.viewToolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.allToolStripMenuItem1,
+            this.personalToolStripMenuItem});
+            this.viewToolStripMenuItem1.Name = "viewToolStripMenuItem1";
+            this.viewToolStripMenuItem1.Size = new System.Drawing.Size(121, 22);
+            this.viewToolStripMenuItem1.Text = "View";
+            // 
+            // allToolStripMenuItem1
+            // 
+            this.allToolStripMenuItem1.Name = "allToolStripMenuItem1";
+            this.allToolStripMenuItem1.Size = new System.Drawing.Size(119, 22);
+            this.allToolStripMenuItem1.Text = "All";
+            // 
+            // personalToolStripMenuItem
+            // 
+            this.personalToolStripMenuItem.Name = "personalToolStripMenuItem";
+            this.personalToolStripMenuItem.Size = new System.Drawing.Size(119, 22);
+            this.personalToolStripMenuItem.Text = "Personal";
+            // 
+            // addToolStripMenuItem
+            // 
+            this.addToolStripMenuItem.Name = "addToolStripMenuItem";
+            this.addToolStripMenuItem.Size = new System.Drawing.Size(121, 22);
+            this.addToolStripMenuItem.Text = "Add new";
+            // 
             // toolStripButton1
             // 
             this.toolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
@@ -306,66 +467,14 @@
             this.toolStripButton1.Size = new System.Drawing.Size(23, 22);
             this.toolStripButton1.Text = "Help";
             // 
-            // viewToolStripMenuItem
+            // tstbLoggedInUser
             // 
-            this.viewToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.allToolStripMenuItem,
-            this.unsolvedToolStripMenuItem,
-            this.solvedToolStripMenuItem});
-            this.viewToolStripMenuItem.Name = "viewToolStripMenuItem";
-            this.viewToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.viewToolStripMenuItem.Text = "View";
-            // 
-            // allToolStripMenuItem
-            // 
-            this.allToolStripMenuItem.Name = "allToolStripMenuItem";
-            this.allToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.allToolStripMenuItem.Text = "All";
-            // 
-            // unsolvedToolStripMenuItem
-            // 
-            this.unsolvedToolStripMenuItem.Name = "unsolvedToolStripMenuItem";
-            this.unsolvedToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.unsolvedToolStripMenuItem.Text = "Unsolved";
-            // 
-            // solvedToolStripMenuItem
-            // 
-            this.solvedToolStripMenuItem.Name = "solvedToolStripMenuItem";
-            this.solvedToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.solvedToolStripMenuItem.Text = "Solved";
-            // 
-            // addNewToolStripMenuItem
-            // 
-            this.addNewToolStripMenuItem.Name = "addNewToolStripMenuItem";
-            this.addNewToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.addNewToolStripMenuItem.Text = "Add new";
-            // 
-            // viewToolStripMenuItem1
-            // 
-            this.viewToolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.allToolStripMenuItem1,
-            this.personalToolStripMenuItem});
-            this.viewToolStripMenuItem1.Name = "viewToolStripMenuItem1";
-            this.viewToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
-            this.viewToolStripMenuItem1.Text = "View";
-            // 
-            // allToolStripMenuItem1
-            // 
-            this.allToolStripMenuItem1.Name = "allToolStripMenuItem1";
-            this.allToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
-            this.allToolStripMenuItem1.Text = "All";
-            // 
-            // personalToolStripMenuItem
-            // 
-            this.personalToolStripMenuItem.Name = "personalToolStripMenuItem";
-            this.personalToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.personalToolStripMenuItem.Text = "Personal";
-            // 
-            // addToolStripMenuItem
-            // 
-            this.addToolStripMenuItem.Name = "addToolStripMenuItem";
-            this.addToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.addToolStripMenuItem.Text = "Add new";
+            this.tstbLoggedInUser.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.tstbLoggedInUser.Enabled = false;
+            this.tstbLoggedInUser.Name = "tstbLoggedInUser";
+            this.tstbLoggedInUser.ReadOnly = true;
+            this.tstbLoggedInUser.Size = new System.Drawing.Size(100, 25);
+            this.tstbLoggedInUser.Text = "Test User";
             // 
             // tabControl1
             // 
@@ -393,84 +502,6 @@
             this.tpAccount.Text = "Account";
             this.tpAccount.UseVisualStyleBackColor = true;
             // 
-            // tpProblem
-            // 
-            this.tpProblem.Controls.Add(this.gbAddNewProblem);
-            this.tpProblem.Controls.Add(this.groupBox2);
-            this.tpProblem.Location = new System.Drawing.Point(4, 14);
-            this.tpProblem.Name = "tpProblem";
-            this.tpProblem.Size = new System.Drawing.Size(783, 399);
-            this.tpProblem.TabIndex = 1;
-            this.tpProblem.Text = "Problems";
-            this.tpProblem.UseVisualStyleBackColor = true;
-            // 
-            // tbSnippet
-            // 
-            this.tbSnippet.Location = new System.Drawing.Point(4, 14);
-            this.tbSnippet.Name = "tbSnippet";
-            this.tbSnippet.Size = new System.Drawing.Size(783, 399);
-            this.tbSnippet.TabIndex = 2;
-            this.tbSnippet.Text = "Snippets";
-            this.tbSnippet.UseVisualStyleBackColor = true;
-            // 
-            // groupBox3
-            // 
-            this.groupBox3.Controls.Add(this.lbAccountSnippetPoints);
-            this.groupBox3.Controls.Add(this.lbAccountSnippetName);
-            this.groupBox3.Controls.Add(this.lb);
-            this.groupBox3.Controls.Add(this.lab);
-            this.groupBox3.Controls.Add(this.lbAccountInfoSnippets);
-            this.groupBox3.Location = new System.Drawing.Point(184, 14);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(271, 232);
-            this.groupBox3.TabIndex = 1;
-            this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Your snippets";
-            // 
-            // lbAccountInfoSnippets
-            // 
-            this.lbAccountInfoSnippets.FormattingEnabled = true;
-            this.lbAccountInfoSnippets.Location = new System.Drawing.Point(6, 19);
-            this.lbAccountInfoSnippets.Name = "lbAccountInfoSnippets";
-            this.lbAccountInfoSnippets.Size = new System.Drawing.Size(120, 147);
-            this.lbAccountInfoSnippets.TabIndex = 0;
-            // 
-            // lab
-            // 
-            this.lab.AutoSize = true;
-            this.lab.Location = new System.Drawing.Point(152, 19);
-            this.lab.Name = "lab";
-            this.lab.Size = new System.Drawing.Size(38, 13);
-            this.lab.TabIndex = 1;
-            this.lab.Text = "Name:";
-            // 
-            // lb
-            // 
-            this.lb.AutoSize = true;
-            this.lb.Location = new System.Drawing.Point(152, 47);
-            this.lb.Name = "lb";
-            this.lb.Size = new System.Drawing.Size(39, 13);
-            this.lb.TabIndex = 2;
-            this.lb.Text = "Points:";
-            // 
-            // lbAccountSnippetName
-            // 
-            this.lbAccountSnippetName.AutoSize = true;
-            this.lbAccountSnippetName.Location = new System.Drawing.Point(209, 19);
-            this.lbAccountSnippetName.Name = "lbAccountSnippetName";
-            this.lbAccountSnippetName.Size = new System.Drawing.Size(24, 13);
-            this.lbAccountSnippetName.TabIndex = 3;
-            this.lbAccountSnippetName.Text = "test";
-            // 
-            // lbAccountSnippetPoints
-            // 
-            this.lbAccountSnippetPoints.AutoSize = true;
-            this.lbAccountSnippetPoints.Location = new System.Drawing.Point(209, 47);
-            this.lbAccountSnippetPoints.Name = "lbAccountSnippetPoints";
-            this.lbAccountSnippetPoints.Size = new System.Drawing.Size(24, 13);
-            this.lbAccountSnippetPoints.TabIndex = 4;
-            this.lbAccountSnippetPoints.Text = "test";
-            // 
             // groupBox4
             // 
             this.groupBox4.Controls.Add(this.lbAccountProblemSolved);
@@ -486,6 +517,24 @@
             this.groupBox4.TabIndex = 5;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Your Problems";
+            // 
+            // lbAccountProblemSolved
+            // 
+            this.lbAccountProblemSolved.AutoSize = true;
+            this.lbAccountProblemSolved.Location = new System.Drawing.Point(209, 73);
+            this.lbAccountProblemSolved.Name = "lbAccountProblemSolved";
+            this.lbAccountProblemSolved.Size = new System.Drawing.Size(24, 13);
+            this.lbAccountProblemSolved.TabIndex = 6;
+            this.lbAccountProblemSolved.Text = "test";
+            // 
+            // lbael10
+            // 
+            this.lbael10.AutoSize = true;
+            this.lbael10.Location = new System.Drawing.Point(152, 73);
+            this.lbael10.Name = "lbael10";
+            this.lbael10.Size = new System.Drawing.Size(43, 13);
+            this.lbael10.TabIndex = 5;
+            this.lbael10.Text = "Solved:";
             // 
             // lbAccountProblemPoints
             // 
@@ -531,113 +580,74 @@
             this.lbAccountInfoProblems.Size = new System.Drawing.Size(120, 147);
             this.lbAccountInfoProblems.TabIndex = 0;
             // 
-            // lbael10
+            // groupBox3
             // 
-            this.lbael10.AutoSize = true;
-            this.lbael10.Location = new System.Drawing.Point(152, 73);
-            this.lbael10.Name = "lbael10";
-            this.lbael10.Size = new System.Drawing.Size(43, 13);
-            this.lbael10.TabIndex = 5;
-            this.lbael10.Text = "Solved:";
+            this.groupBox3.Controls.Add(this.lbAccountSnippetPoints);
+            this.groupBox3.Controls.Add(this.lbAccountSnippetName);
+            this.groupBox3.Controls.Add(this.lb);
+            this.groupBox3.Controls.Add(this.lab);
+            this.groupBox3.Controls.Add(this.lbAccountInfoSnippets);
+            this.groupBox3.Location = new System.Drawing.Point(184, 14);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(271, 232);
+            this.groupBox3.TabIndex = 1;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Your snippets";
             // 
-            // lbAccountProblemSolved
+            // lbAccountSnippetPoints
             // 
-            this.lbAccountProblemSolved.AutoSize = true;
-            this.lbAccountProblemSolved.Location = new System.Drawing.Point(209, 73);
-            this.lbAccountProblemSolved.Name = "lbAccountProblemSolved";
-            this.lbAccountProblemSolved.Size = new System.Drawing.Size(24, 13);
-            this.lbAccountProblemSolved.TabIndex = 6;
-            this.lbAccountProblemSolved.Text = "test";
+            this.lbAccountSnippetPoints.AutoSize = true;
+            this.lbAccountSnippetPoints.Location = new System.Drawing.Point(209, 47);
+            this.lbAccountSnippetPoints.Name = "lbAccountSnippetPoints";
+            this.lbAccountSnippetPoints.Size = new System.Drawing.Size(24, 13);
+            this.lbAccountSnippetPoints.TabIndex = 4;
+            this.lbAccountSnippetPoints.Text = "test";
             // 
-            // Description
+            // lbAccountSnippetName
             // 
-            this.Description.AutoSize = true;
-            this.Description.Location = new System.Drawing.Point(199, 102);
-            this.Description.Name = "Description";
-            this.Description.Size = new System.Drawing.Size(63, 13);
-            this.Description.TabIndex = 4;
-            this.Description.Text = "Description:";
+            this.lbAccountSnippetName.AutoSize = true;
+            this.lbAccountSnippetName.Location = new System.Drawing.Point(209, 19);
+            this.lbAccountSnippetName.Name = "lbAccountSnippetName";
+            this.lbAccountSnippetName.Size = new System.Drawing.Size(24, 13);
+            this.lbAccountSnippetName.TabIndex = 3;
+            this.lbAccountSnippetName.Text = "test";
             // 
-            // lbProblemInfoName
+            // lb
             // 
-            this.lbProblemInfoName.AutoSize = true;
-            this.lbProblemInfoName.Location = new System.Drawing.Point(286, 22);
-            this.lbProblemInfoName.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
-            this.lbProblemInfoName.Name = "lbProblemInfoName";
-            this.lbProblemInfoName.Size = new System.Drawing.Size(28, 13);
-            this.lbProblemInfoName.TabIndex = 5;
-            this.lbProblemInfoName.Text = "Test";
+            this.lb.AutoSize = true;
+            this.lb.Location = new System.Drawing.Point(152, 47);
+            this.lb.Name = "lb";
+            this.lb.Size = new System.Drawing.Size(39, 13);
+            this.lb.TabIndex = 2;
+            this.lb.Text = "Points:";
             // 
-            // lbProblemInfoAuthor
+            // lab
             // 
-            this.lbProblemInfoAuthor.AutoSize = true;
-            this.lbProblemInfoAuthor.Location = new System.Drawing.Point(286, 42);
-            this.lbProblemInfoAuthor.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
-            this.lbProblemInfoAuthor.Name = "lbProblemInfoAuthor";
-            this.lbProblemInfoAuthor.Size = new System.Drawing.Size(28, 13);
-            this.lbProblemInfoAuthor.TabIndex = 6;
-            this.lbProblemInfoAuthor.Text = "Test";
+            this.lab.AutoSize = true;
+            this.lab.Location = new System.Drawing.Point(152, 19);
+            this.lab.Name = "lab";
+            this.lab.Size = new System.Drawing.Size(38, 13);
+            this.lab.TabIndex = 1;
+            this.lab.Text = "Name:";
             // 
-            // lbProblemInfoPoints
+            // lbAccountInfoSnippets
             // 
-            this.lbProblemInfoPoints.AutoSize = true;
-            this.lbProblemInfoPoints.Location = new System.Drawing.Point(286, 58);
-            this.lbProblemInfoPoints.Name = "lbProblemInfoPoints";
-            this.lbProblemInfoPoints.Size = new System.Drawing.Size(28, 13);
-            this.lbProblemInfoPoints.TabIndex = 7;
-            this.lbProblemInfoPoints.Text = "Test";
+            this.lbAccountInfoSnippets.FormattingEnabled = true;
+            this.lbAccountInfoSnippets.Location = new System.Drawing.Point(6, 19);
+            this.lbAccountInfoSnippets.Name = "lbAccountInfoSnippets";
+            this.lbAccountInfoSnippets.Size = new System.Drawing.Size(120, 147);
+            this.lbAccountInfoSnippets.TabIndex = 0;
             // 
-            // tbProblemInfoDescription
+            // tpProblem
             // 
-            this.tbProblemInfoDescription.Location = new System.Drawing.Point(289, 102);
-            this.tbProblemInfoDescription.Multiline = true;
-            this.tbProblemInfoDescription.Name = "tbProblemInfoDescription";
-            this.tbProblemInfoDescription.Size = new System.Drawing.Size(129, 114);
-            this.tbProblemInfoDescription.TabIndex = 8;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(6, 115);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(35, 13);
-            this.label4.TabIndex = 6;
-            this.label4.Text = "Email:";
-            // 
-            // lbAccountInfoEmail
-            // 
-            this.lbAccountInfoEmail.AutoSize = true;
-            this.lbAccountInfoEmail.Location = new System.Drawing.Point(77, 115);
-            this.lbAccountInfoEmail.Name = "lbAccountInfoEmail";
-            this.lbAccountInfoEmail.Size = new System.Drawing.Size(63, 13);
-            this.lbAccountInfoEmail.TabIndex = 7;
-            this.lbAccountInfoEmail.Text = "test@test.nl";
-            // 
-            // tstbLoggedInUser
-            // 
-            this.tstbLoggedInUser.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
-            this.tstbLoggedInUser.Enabled = false;
-            this.tstbLoggedInUser.Name = "tstbLoggedInUser";
-            this.tstbLoggedInUser.ReadOnly = true;
-            this.tstbLoggedInUser.Size = new System.Drawing.Size(100, 25);
-            this.tstbLoggedInUser.Text = "Test User";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(199, 235);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(59, 13);
-            this.label5.TabIndex = 9;
-            this.label5.Text = "Comments:";
-            // 
-            // tbProblemInfoComments
-            // 
-            this.tbProblemInfoComments.Location = new System.Drawing.Point(289, 235);
-            this.tbProblemInfoComments.Multiline = true;
-            this.tbProblemInfoComments.Name = "tbProblemInfoComments";
-            this.tbProblemInfoComments.Size = new System.Drawing.Size(129, 114);
-            this.tbProblemInfoComments.TabIndex = 10;
+            this.tpProblem.Controls.Add(this.gbAddNewProblem);
+            this.tpProblem.Controls.Add(this.groupBox2);
+            this.tpProblem.Location = new System.Drawing.Point(4, 14);
+            this.tpProblem.Name = "tpProblem";
+            this.tpProblem.Size = new System.Drawing.Size(783, 399);
+            this.tpProblem.TabIndex = 1;
+            this.tpProblem.Text = "Problems";
+            this.tpProblem.UseVisualStyleBackColor = true;
             // 
             // gbAddNewProblem
             // 
@@ -654,14 +664,21 @@
             this.gbAddNewProblem.TabStop = false;
             this.gbAddNewProblem.Text = "Add new problem";
             // 
-            // label8
+            // btAddNewProblemSave
             // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(6, 19);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(38, 13);
-            this.label8.TabIndex = 2;
-            this.label8.Text = "Name:";
+            this.btAddNewProblemSave.Location = new System.Drawing.Point(150, 176);
+            this.btAddNewProblemSave.Name = "btAddNewProblemSave";
+            this.btAddNewProblemSave.Size = new System.Drawing.Size(75, 23);
+            this.btAddNewProblemSave.TabIndex = 14;
+            this.btAddNewProblemSave.Text = "Save";
+            this.btAddNewProblemSave.UseVisualStyleBackColor = true;
+            // 
+            // tbAddNewProblemName
+            // 
+            this.tbAddNewProblemName.Location = new System.Drawing.Point(96, 19);
+            this.tbAddNewProblemName.Name = "tbAddNewProblemName";
+            this.tbAddNewProblemName.Size = new System.Drawing.Size(129, 20);
+            this.tbAddNewProblemName.TabIndex = 13;
             // 
             // tbAddNewProblemDiscription
             // 
@@ -680,39 +697,23 @@
             this.label9.TabIndex = 11;
             this.label9.Text = "Description:";
             // 
-            // tbAddNewProblemName
+            // label8
             // 
-            this.tbAddNewProblemName.Location = new System.Drawing.Point(96, 19);
-            this.tbAddNewProblemName.Name = "tbAddNewProblemName";
-            this.tbAddNewProblemName.Size = new System.Drawing.Size(129, 20);
-            this.tbAddNewProblemName.TabIndex = 13;
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(6, 19);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(38, 13);
+            this.label8.TabIndex = 2;
+            this.label8.Text = "Name:";
             // 
-            // btAddNewProblemSave
+            // tbSnippet
             // 
-            this.btAddNewProblemSave.Location = new System.Drawing.Point(150, 176);
-            this.btAddNewProblemSave.Name = "btAddNewProblemSave";
-            this.btAddNewProblemSave.Size = new System.Drawing.Size(75, 23);
-            this.btAddNewProblemSave.TabIndex = 14;
-            this.btAddNewProblemSave.Text = "Save";
-            this.btAddNewProblemSave.UseVisualStyleBackColor = true;
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(199, 80);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(43, 13);
-            this.label10.TabIndex = 11;
-            this.label10.Text = "Solved:";
-            // 
-            // lbProblemInfoSolved
-            // 
-            this.lbProblemInfoSolved.AutoSize = true;
-            this.lbProblemInfoSolved.Location = new System.Drawing.Point(286, 80);
-            this.lbProblemInfoSolved.Name = "lbProblemInfoSolved";
-            this.lbProblemInfoSolved.Size = new System.Drawing.Size(28, 13);
-            this.lbProblemInfoSolved.TabIndex = 12;
-            this.lbProblemInfoSolved.Text = "Test";
+            this.tbSnippet.Location = new System.Drawing.Point(4, 14);
+            this.tbSnippet.Name = "tbSnippet";
+            this.tbSnippet.Size = new System.Drawing.Size(783, 399);
+            this.tbSnippet.TabIndex = 2;
+            this.tbSnippet.Text = "Snippets";
+            this.tbSnippet.UseVisualStyleBackColor = true;
             // 
             // Form1
             // 
@@ -724,6 +725,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form1";
             this.Text = "Snippetgrab";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
@@ -732,11 +734,11 @@
             this.toolStrip1.PerformLayout();
             this.tabControl1.ResumeLayout(false);
             this.tpAccount.ResumeLayout(false);
-            this.tpProblem.ResumeLayout(false);
-            this.groupBox3.ResumeLayout(false);
-            this.groupBox3.PerformLayout();
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
+            this.groupBox3.ResumeLayout(false);
+            this.groupBox3.PerformLayout();
+            this.tpProblem.ResumeLayout(false);
             this.gbAddNewProblem.ResumeLayout(false);
             this.gbAddNewProblem.PerformLayout();
             this.ResumeLayout(false);
