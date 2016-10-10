@@ -16,18 +16,24 @@ namespace Snippetgrab.data
     class UserSqlContext : IUserContext
     {
         private SqlConnection Connection;
-        private readonly string sqlCon = @"Data Source = (LocalDB)\MSSQLLocalDB;" +
-                @"AttachDbFilename = C:\Users\max1_\Source\Repos\Snippetgrab\Snippetgrab\database Backup\Snippetgrab.mdf;
-                            Integrated Security = True;
-                            Connect Timeout=30";
+        private string sqlCon;
+
+        public UserSqlContext()
+        {
+            sqlCon = @"Data Source = (LocalDB)\MSSQLLocalDB;" +
+                     @"AttachDbFilename=|DataDirectory|\Snippetgrab.mdf;" +
+                     "Integrated Security = True;" +
+                     "Connect Timeout = 30";
+        }
 
         public bool CheckPassword(string email, string password)
         {
+
             Connection = new SqlConnection(sqlCon);
             User user;
             using (Connection)
             {
-                string query = "SELECT Password FROM [User] WHERE Email = @email";
+                string query = "SELECT * FROM [User] WHERE Email = @email";
                 using (SqlCommand command = new SqlCommand(query, Connection))
                 {
                     SqlParameter param = new SqlParameter();
@@ -38,10 +44,14 @@ namespace Snippetgrab.data
                     Connection.Open();
                     using (SqlDataReader reader = command.ExecuteReader())
                     {
-                        if (Convert.ToString(reader["Password"]) == password)
-                            return true;
-                        else
-                            return false;
+                        while (reader.Read())
+                        {
+                            user = CreateUserFromReader(reader);
+                            if (user.GetPassword() == password)
+                                return true;
+                            else
+                                return false;
+                        }
                     }
                 }                
             }
