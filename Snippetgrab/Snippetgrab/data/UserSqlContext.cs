@@ -65,9 +65,10 @@ namespace Snippetgrab.data
             List<User> result = new List<User>();
             using (Connection)
             {
-                string query = "SELECT * FROM User ORDER BY Id";
+                string query = "SELECT * FROM [User] ORDER BY UserID";
                 using (SqlCommand command = new SqlCommand(query, Connection))
                 {
+                    Connection.Open();
                     using (SqlDataReader reader = command.ExecuteReader())
                     {
                         while (reader.Read())
@@ -165,10 +166,11 @@ namespace Snippetgrab.data
             using (Connection)
             {
                 string query =
-                    "INSERT INTO [User] (Name, JoinDate, Reputation, Email, Password, IsAdmin) VALUES ('@name', '@joindate', '@reputation', '@email', '@password', '@isAdmin')";
+                    "INSERT INTO [User] (Name, JoinDate, Reputation, Email, Password, IsAdmin) VALUES (@name, @joindate, @reputation, @email, @password, @isAdmin)";
                 using (SqlCommand command = new SqlCommand(query, Connection))
                 {
-                    string sqlFormattedDate = user.JoinDate.ToString("YYYYMMDDTHH:MM:SS.fff");
+                    DateTime dateOnly = user.JoinDate.Date;
+                    string sqlFormattedDate = dateOnly.ToString("d");
 
                     command.Parameters.AddWithValue("name", user.Name);
                     command.Parameters.AddWithValue("joindate", sqlFormattedDate);

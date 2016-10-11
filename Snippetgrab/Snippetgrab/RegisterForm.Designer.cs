@@ -29,15 +29,15 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.tbName = new System.Windows.Forms.TextBox();
-            this.tbEmail = new System.Windows.Forms.TextBox();
-            this.tbPassword = new System.Windows.Forms.TextBox();
-            this.tbPassworCheck = new System.Windows.Forms.TextBox();
             this.btCreate = new System.Windows.Forms.Button();
+            this.tbPassworCheck = new System.Windows.Forms.TextBox();
+            this.tbPassword = new System.Windows.Forms.TextBox();
+            this.tbEmail = new System.Windows.Forms.TextBox();
+            this.tbName = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -59,32 +59,47 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Enter your details";
             // 
-            // label1
+            // btCreate
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(15, 45);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(38, 13);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Name:";
+            this.btCreate.Location = new System.Drawing.Point(183, 163);
+            this.btCreate.Name = "btCreate";
+            this.btCreate.Size = new System.Drawing.Size(88, 27);
+            this.btCreate.TabIndex = 8;
+            this.btCreate.Text = "Confirm";
+            this.btCreate.UseVisualStyleBackColor = true;
+            this.btCreate.Click += new System.EventHandler(this.btCreate_Click);
             // 
-            // label2
+            // tbPassworCheck
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(15, 71);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(35, 13);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Email:";
+            this.tbPassworCheck.Location = new System.Drawing.Point(140, 123);
+            this.tbPassworCheck.Name = "tbPassworCheck";
+            this.tbPassworCheck.Size = new System.Drawing.Size(131, 20);
+            this.tbPassworCheck.TabIndex = 7;
+            this.tbPassworCheck.Text = "team";
             // 
-            // label3
+            // tbPassword
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(15, 97);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(56, 13);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "Password:";
+            this.tbPassword.Location = new System.Drawing.Point(140, 97);
+            this.tbPassword.Name = "tbPassword";
+            this.tbPassword.Size = new System.Drawing.Size(131, 20);
+            this.tbPassword.TabIndex = 6;
+            this.tbPassword.Text = "team";
+            // 
+            // tbEmail
+            // 
+            this.tbEmail.Location = new System.Drawing.Point(140, 71);
+            this.tbEmail.Name = "tbEmail";
+            this.tbEmail.Size = new System.Drawing.Size(131, 20);
+            this.tbEmail.TabIndex = 5;
+            this.tbEmail.Text = "jaap@test.nl";
+            // 
+            // tbName
+            // 
+            this.tbName.Location = new System.Drawing.Point(140, 45);
+            this.tbName.Name = "tbName";
+            this.tbName.Size = new System.Drawing.Size(131, 20);
+            this.tbName.TabIndex = 4;
+            this.tbName.Text = "Jaap";
             // 
             // label4
             // 
@@ -95,43 +110,32 @@
             this.label4.TabIndex = 3;
             this.label4.Text = "Confirm password:";
             // 
-            // tbName
+            // label3
             // 
-            this.tbName.Location = new System.Drawing.Point(140, 45);
-            this.tbName.Name = "tbName";
-            this.tbName.Size = new System.Drawing.Size(131, 20);
-            this.tbName.TabIndex = 4;
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(15, 97);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(56, 13);
+            this.label3.TabIndex = 2;
+            this.label3.Text = "Password:";
             // 
-            // tbEmail
+            // label2
             // 
-            this.tbEmail.Location = new System.Drawing.Point(140, 71);
-            this.tbEmail.Name = "tbEmail";
-            this.tbEmail.Size = new System.Drawing.Size(131, 20);
-            this.tbEmail.TabIndex = 5;
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(15, 71);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(35, 13);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "Email:";
             // 
-            // tbPassword
+            // label1
             // 
-            this.tbPassword.Location = new System.Drawing.Point(140, 97);
-            this.tbPassword.Name = "tbPassword";
-            this.tbPassword.Size = new System.Drawing.Size(131, 20);
-            this.tbPassword.TabIndex = 6;
-            // 
-            // tbPassworCheck
-            // 
-            this.tbPassworCheck.Location = new System.Drawing.Point(140, 123);
-            this.tbPassworCheck.Name = "tbPassworCheck";
-            this.tbPassworCheck.Size = new System.Drawing.Size(131, 20);
-            this.tbPassworCheck.TabIndex = 7;
-            // 
-            // btCreate
-            // 
-            this.btCreate.Location = new System.Drawing.Point(183, 163);
-            this.btCreate.Name = "btCreate";
-            this.btCreate.Size = new System.Drawing.Size(88, 27);
-            this.btCreate.TabIndex = 8;
-            this.btCreate.Text = "Confirm";
-            this.btCreate.UseVisualStyleBackColor = true;
-            this.btCreate.Click += new System.EventHandler(this.btCreate_Click);
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(15, 45);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(38, 13);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Name:";
             // 
             // RegisterForm
             // 

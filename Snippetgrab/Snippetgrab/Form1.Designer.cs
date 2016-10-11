@@ -93,6 +93,13 @@
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.tbSnippet = new System.Windows.Forms.TabPage();
+            this.tsbAdminPannel = new System.Windows.Forms.ToolStripButton();
+            this.tbAdmin = new System.Windows.Forms.TabPage();
+            this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.lbAdminUsers = new System.Windows.Forms.ListBox();
+            this.cbAdminMakeAdmin = new System.Windows.Forms.CheckBox();
+            this.label11 = new System.Windows.Forms.Label();
+            this.btDeleteUser = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.toolStrip1.SuspendLayout();
@@ -102,6 +109,8 @@
             this.groupBox3.SuspendLayout();
             this.tpProblem.SuspendLayout();
             this.gbAddNewProblem.SuspendLayout();
+            this.tbAdmin.SuspendLayout();
+            this.groupBox5.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -341,7 +350,8 @@
             this.toolStripDropDownButton2,
             this.toolStripDropDownButton3,
             this.toolStripButton1,
-            this.tstbLoggedInUser});
+            this.tstbLoggedInUser,
+            this.tsbAdminPannel});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Size = new System.Drawing.Size(815, 25);
@@ -363,14 +373,14 @@
             // accountInfoToolStripMenuItem
             // 
             this.accountInfoToolStripMenuItem.Name = "accountInfoToolStripMenuItem";
-            this.accountInfoToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.accountInfoToolStripMenuItem.Size = new System.Drawing.Size(143, 22);
             this.accountInfoToolStripMenuItem.Text = "Account info";
             this.accountInfoToolStripMenuItem.Click += new System.EventHandler(this.accountInfoToolStripMenuItem_Click);
             // 
             // logOffToolStripMenuItem
             // 
             this.logOffToolStripMenuItem.Name = "logOffToolStripMenuItem";
-            this.logOffToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.logOffToolStripMenuItem.Size = new System.Drawing.Size(143, 22);
             this.logOffToolStripMenuItem.Text = "Log Off";
             // 
             // toolStripDropDownButton2
@@ -400,6 +410,7 @@
             this.allToolStripMenuItem.Name = "allToolStripMenuItem";
             this.allToolStripMenuItem.Size = new System.Drawing.Size(123, 22);
             this.allToolStripMenuItem.Text = "All";
+            this.allToolStripMenuItem.Click += new System.EventHandler(this.allToolStripMenuItem_Click);
             // 
             // unsolvedToolStripMenuItem
             // 
@@ -445,6 +456,7 @@
             this.allToolStripMenuItem1.Name = "allToolStripMenuItem1";
             this.allToolStripMenuItem1.Size = new System.Drawing.Size(119, 22);
             this.allToolStripMenuItem1.Text = "All";
+            this.allToolStripMenuItem1.Click += new System.EventHandler(this.allToolStripMenuItem1_Click);
             // 
             // personalToolStripMenuItem
             // 
@@ -482,6 +494,7 @@
             this.tabControl1.Controls.Add(this.tpAccount);
             this.tabControl1.Controls.Add(this.tpProblem);
             this.tabControl1.Controls.Add(this.tbSnippet);
+            this.tabControl1.Controls.Add(this.tbAdmin);
             this.tabControl1.ItemSize = new System.Drawing.Size(10, 10);
             this.tabControl1.Location = new System.Drawing.Point(12, 28);
             this.tabControl1.Name = "tabControl1";
@@ -715,6 +728,77 @@
             this.tbSnippet.Text = "Snippets";
             this.tbSnippet.UseVisualStyleBackColor = true;
             // 
+            // tsbAdminPannel
+            // 
+            this.tsbAdminPannel.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.tsbAdminPannel.Enabled = false;
+            this.tsbAdminPannel.Image = ((System.Drawing.Image)(resources.GetObject("tsbAdminPannel.Image")));
+            this.tsbAdminPannel.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbAdminPannel.Name = "tsbAdminPannel";
+            this.tsbAdminPannel.Size = new System.Drawing.Size(79, 22);
+            this.tsbAdminPannel.Text = "Admin panel";
+            this.tsbAdminPannel.Click += new System.EventHandler(this.tsbAdminPannel_Click);
+            // 
+            // tbAdmin
+            // 
+            this.tbAdmin.Controls.Add(this.groupBox5);
+            this.tbAdmin.Location = new System.Drawing.Point(4, 14);
+            this.tbAdmin.Name = "tbAdmin";
+            this.tbAdmin.Size = new System.Drawing.Size(783, 399);
+            this.tbAdmin.TabIndex = 3;
+            this.tbAdmin.Text = "tabPage1";
+            this.tbAdmin.UseVisualStyleBackColor = true;
+            // 
+            // groupBox5
+            // 
+            this.groupBox5.Controls.Add(this.btDeleteUser);
+            this.groupBox5.Controls.Add(this.label11);
+            this.groupBox5.Controls.Add(this.cbAdminMakeAdmin);
+            this.groupBox5.Controls.Add(this.lbAdminUsers);
+            this.groupBox5.Location = new System.Drawing.Point(13, 17);
+            this.groupBox5.Name = "groupBox5";
+            this.groupBox5.Size = new System.Drawing.Size(287, 218);
+            this.groupBox5.TabIndex = 0;
+            this.groupBox5.TabStop = false;
+            this.groupBox5.Text = "All users";
+            // 
+            // lbAdminUsers
+            // 
+            this.lbAdminUsers.FormattingEnabled = true;
+            this.lbAdminUsers.Location = new System.Drawing.Point(6, 19);
+            this.lbAdminUsers.Name = "lbAdminUsers";
+            this.lbAdminUsers.Size = new System.Drawing.Size(120, 186);
+            this.lbAdminUsers.TabIndex = 0;
+            this.lbAdminUsers.SelectedIndexChanged += new System.EventHandler(this.lbAdminUsers_SelectedIndexChanged);
+            // 
+            // cbAdminMakeAdmin
+            // 
+            this.cbAdminMakeAdmin.AutoSize = true;
+            this.cbAdminMakeAdmin.Location = new System.Drawing.Point(183, 47);
+            this.cbAdminMakeAdmin.Name = "cbAdminMakeAdmin";
+            this.cbAdminMakeAdmin.Size = new System.Drawing.Size(65, 17);
+            this.cbAdminMakeAdmin.TabIndex = 1;
+            this.cbAdminMakeAdmin.Text = "Is admin";
+            this.cbAdminMakeAdmin.UseVisualStyleBackColor = true;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(180, 31);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(100, 13);
+            this.label11.TabIndex = 2;
+            this.label11.Text = "Set a user as admin";
+            // 
+            // btDeleteUser
+            // 
+            this.btDeleteUser.Location = new System.Drawing.Point(183, 182);
+            this.btDeleteUser.Name = "btDeleteUser";
+            this.btDeleteUser.Size = new System.Drawing.Size(75, 23);
+            this.btDeleteUser.TabIndex = 3;
+            this.btDeleteUser.Text = "Delete";
+            this.btDeleteUser.UseVisualStyleBackColor = true;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -741,6 +825,9 @@
             this.tpProblem.ResumeLayout(false);
             this.gbAddNewProblem.ResumeLayout(false);
             this.gbAddNewProblem.PerformLayout();
+            this.tbAdmin.ResumeLayout(false);
+            this.groupBox5.ResumeLayout(false);
+            this.groupBox5.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -812,6 +899,13 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label lbProblemInfoSolved;
         private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.ToolStripButton tsbAdminPannel;
+        private System.Windows.Forms.TabPage tbAdmin;
+        private System.Windows.Forms.GroupBox groupBox5;
+        private System.Windows.Forms.Button btDeleteUser;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.CheckBox cbAdminMakeAdmin;
+        private System.Windows.Forms.ListBox lbAdminUsers;
     }
 }
 
