@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.IO;
 using System.Runtime.Remoting.Activation;
+using System.Security.Cryptography;
 using System.Windows.Forms;
 
 namespace Snippetgrab.data
@@ -153,6 +154,8 @@ namespace Snippetgrab.data
                         while (reader.Read())
                         {
                             user = CreateUserFromReader(reader);
+                            string hashedPassword = GenerateSaltedHash(Encoding.UTF8.GetBytes(user.GetPassword()), );
+                            Console.WriteLine(hashedPassword);
                             return user;
                         }
                     }
@@ -226,7 +229,7 @@ namespace Snippetgrab.data
             using (Connection)
             {
                 string query =
-                    "UPDATE [User] SET Name = @name, JoinDate = joindate, Reputation = reputation, Email = email, Password = @password, IsAdmin = @isAdmin WHERE UserID = @id";
+                    "UPDATE [User] SET Name = @name, JoinDate = @joindate, Reputation = @reputation, Email = @email, Password = @password, IsAdmin = @isAdmin WHERE UserID = @id";
                 using (SqlCommand command = new SqlCommand(query, Connection))
                 {
                     DateTime dateOnly = user.JoinDate.Date;
@@ -264,6 +267,25 @@ namespace Snippetgrab.data
                 Convert.ToString(reader["Email"]),
                 Convert.ToBoolean(reader["IsAdmin"]),
                 Convert.ToString(reader["Password"]));
+        }
+
+        static byte[] GenerateSaltedHash(byte[] plainText, byte[] salt)
+        {
+            HashAlgorithm algorithm = new SHA256Managed();
+
+            byte[] plainTextWithSaltBytes =
+              new byte[plainText.Length + salt.Length];
+
+            for (int i = 0; i < plainText.Length; i++)
+            {
+                plainTextWithSaltBytes[i] = plainText[i];
+            }
+            for (int i = 0; i < salt.Length; i++)
+            {
+                plainTextWithSaltBytes[plainText.Length + i] = salt[i];
+            }
+
+            return algorithm.ComputeHash(plainTextWithSaltBytes);
         }
     }
 }
