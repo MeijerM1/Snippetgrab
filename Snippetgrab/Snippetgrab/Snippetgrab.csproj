@@ -158,10 +158,10 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Snippetgrab.mdf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Snippetgrab_log.ldf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <DependentUpon>Snippetgrab.mdf</DependentUpon>
     </Content>
   </ItemGroup>

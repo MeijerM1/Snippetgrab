@@ -139,7 +139,7 @@ namespace Snippetgrab.data
             User user;
             using (Connection)
             {
-                string query = "SELECT * FROM User WHERE ID = @id ORDER BY Id";
+                string query = "SELECT * FROM [User] WHERE UserID = @id";
                 using (SqlCommand command = new SqlCommand(query, Connection))
                 {
                     SqlParameter param = new SqlParameter();
@@ -147,6 +147,7 @@ namespace Snippetgrab.data
                     param.Value = id;
                     command.Parameters.Add(param);
 
+                    Connection.Open();
                     using (SqlDataReader reader = command.ExecuteReader())
                     {
                         while (reader.Read())
@@ -199,14 +200,17 @@ namespace Snippetgrab.data
             }
         }
 
-        public bool Remove(User user)
+        public bool Remove(int id)
         {
+            Connection = new SqlConnection(sqlCon);
             using (Connection)
             {
-                string query = "DELETE FROM Student WHERE ID = @id";
+                string query = "DELETE FROM [User] WHERE UserID = @id";
                 using (SqlCommand command = new SqlCommand(query, Connection))
                 {
-                    command.Parameters.AddWithValue("id", user.ID);
+                    command.Parameters.AddWithValue("id", id);
+
+                    Connection.Open();
                     if (Convert.ToInt32(command.ExecuteNonQuery()) == 1)
                     {
                         return true;

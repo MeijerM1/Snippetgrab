@@ -69,6 +69,7 @@
             this.addToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.tstbLoggedInUser = new System.Windows.Forms.ToolStripTextBox();
+            this.tsbAdminPannel = new System.Windows.Forms.ToolStripButton();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tpAccount = new System.Windows.Forms.TabPage();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
@@ -93,13 +94,12 @@
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.tbSnippet = new System.Windows.Forms.TabPage();
-            this.tsbAdminPannel = new System.Windows.Forms.ToolStripButton();
             this.tbAdmin = new System.Windows.Forms.TabPage();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
-            this.lbAdminUsers = new System.Windows.Forms.ListBox();
-            this.cbAdminMakeAdmin = new System.Windows.Forms.CheckBox();
-            this.label11 = new System.Windows.Forms.Label();
             this.btDeleteUser = new System.Windows.Forms.Button();
+            this.label11 = new System.Windows.Forms.Label();
+            this.cbAdminMakeAdmin = new System.Windows.Forms.CheckBox();
+            this.lbAdminUsers = new System.Windows.Forms.ListBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.toolStrip1.SuspendLayout();
@@ -488,6 +488,17 @@
             this.tstbLoggedInUser.Size = new System.Drawing.Size(100, 25);
             this.tstbLoggedInUser.Text = "Test User";
             // 
+            // tsbAdminPannel
+            // 
+            this.tsbAdminPannel.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.tsbAdminPannel.Enabled = false;
+            this.tsbAdminPannel.Image = ((System.Drawing.Image)(resources.GetObject("tsbAdminPannel.Image")));
+            this.tsbAdminPannel.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbAdminPannel.Name = "tsbAdminPannel";
+            this.tsbAdminPannel.Size = new System.Drawing.Size(79, 22);
+            this.tsbAdminPannel.Text = "Admin panel";
+            this.tsbAdminPannel.Click += new System.EventHandler(this.tsbAdminPannel_Click);
+            // 
             // tabControl1
             // 
             this.tabControl1.Appearance = System.Windows.Forms.TabAppearance.FlatButtons;
@@ -728,17 +739,6 @@
             this.tbSnippet.Text = "Snippets";
             this.tbSnippet.UseVisualStyleBackColor = true;
             // 
-            // tsbAdminPannel
-            // 
-            this.tsbAdminPannel.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.tsbAdminPannel.Enabled = false;
-            this.tsbAdminPannel.Image = ((System.Drawing.Image)(resources.GetObject("tsbAdminPannel.Image")));
-            this.tsbAdminPannel.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tsbAdminPannel.Name = "tsbAdminPannel";
-            this.tsbAdminPannel.Size = new System.Drawing.Size(79, 22);
-            this.tsbAdminPannel.Text = "Admin panel";
-            this.tsbAdminPannel.Click += new System.EventHandler(this.tsbAdminPannel_Click);
-            // 
             // tbAdmin
             // 
             this.tbAdmin.Controls.Add(this.groupBox5);
@@ -762,14 +762,24 @@
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "All users";
             // 
-            // lbAdminUsers
+            // btDeleteUser
             // 
-            this.lbAdminUsers.FormattingEnabled = true;
-            this.lbAdminUsers.Location = new System.Drawing.Point(6, 19);
-            this.lbAdminUsers.Name = "lbAdminUsers";
-            this.lbAdminUsers.Size = new System.Drawing.Size(120, 186);
-            this.lbAdminUsers.TabIndex = 0;
-            this.lbAdminUsers.SelectedIndexChanged += new System.EventHandler(this.lbAdminUsers_SelectedIndexChanged);
+            this.btDeleteUser.Location = new System.Drawing.Point(183, 182);
+            this.btDeleteUser.Name = "btDeleteUser";
+            this.btDeleteUser.Size = new System.Drawing.Size(75, 23);
+            this.btDeleteUser.TabIndex = 3;
+            this.btDeleteUser.Text = "Delete";
+            this.btDeleteUser.UseVisualStyleBackColor = true;
+            this.btDeleteUser.Click += new System.EventHandler(this.btDeleteUser_Click);
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(180, 31);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(100, 13);
+            this.label11.TabIndex = 2;
+            this.label11.Text = "Set a user as admin";
             // 
             // cbAdminMakeAdmin
             // 
@@ -781,23 +791,14 @@
             this.cbAdminMakeAdmin.Text = "Is admin";
             this.cbAdminMakeAdmin.UseVisualStyleBackColor = true;
             // 
-            // label11
+            // lbAdminUsers
             // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(180, 31);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(100, 13);
-            this.label11.TabIndex = 2;
-            this.label11.Text = "Set a user as admin";
-            // 
-            // btDeleteUser
-            // 
-            this.btDeleteUser.Location = new System.Drawing.Point(183, 182);
-            this.btDeleteUser.Name = "btDeleteUser";
-            this.btDeleteUser.Size = new System.Drawing.Size(75, 23);
-            this.btDeleteUser.TabIndex = 3;
-            this.btDeleteUser.Text = "Delete";
-            this.btDeleteUser.UseVisualStyleBackColor = true;
+            this.lbAdminUsers.FormattingEnabled = true;
+            this.lbAdminUsers.Location = new System.Drawing.Point(6, 19);
+            this.lbAdminUsers.Name = "lbAdminUsers";
+            this.lbAdminUsers.Size = new System.Drawing.Size(120, 186);
+            this.lbAdminUsers.TabIndex = 0;
+            this.lbAdminUsers.SelectedIndexChanged += new System.EventHandler(this.lbAdminUsers_SelectedIndexChanged);
             // 
             // Form1
             // 

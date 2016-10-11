@@ -44,8 +44,6 @@ namespace Snippetgrab
             UpdateAccountControls();
         }
 
-
-
         private void allToolStripMenuItem_Click(object sender, EventArgs e)
         {
             tabControl1.SelectTab(1);
@@ -64,7 +62,17 @@ namespace Snippetgrab
 
         private void lbAdminUsers_SelectedIndexChanged(object sender, EventArgs e)
         {
+            int selectedItem = lbAdminUsers.SelectedIndex;
 
+            if (lbAdminUsers.SelectedIndex > -1)
+            {
+                User user = userRepo.GetById(selectedItem + 1);
+
+                if (user.IsAdmin)
+                    cbAdminMakeAdmin.Checked = true;
+                else
+                    cbAdminMakeAdmin.Checked = false;
+            }
         }
 
         private void UpdateAdminControls()
@@ -86,6 +94,26 @@ namespace Snippetgrab
             lbAccountInfoEmail.Text = currentUser.Email;
         }
 
+        private void btDeleteUser_Click(object sender, EventArgs e)
+        {
+            RemoveUser();
+        }
 
+        private void RemoveUser()
+        {
+            DialogResult dialogResult = MessageBox.Show("Are you sure you want to delete this user, This action cannot be undone", "Confirm delete", MessageBoxButtons.YesNo);
+            if (dialogResult == DialogResult.Yes)
+            {
+                if (lbAdminUsers.SelectedIndex > -1)
+                {
+                    userRepo.Remove(lbAdminUsers.SelectedIndex + 1);
+                    UpdateAdminControls();
+                }
+            }
+            else if (dialogResult == DialogResult.No)
+            {
+                return;
+            }
+        }
     }
 }

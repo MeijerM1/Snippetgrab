@@ -41,9 +41,9 @@ namespace Snippetgrab.Logic
             return context.Insert(user);
         }
 
-        public bool Remove(User user)
+        public bool Remove(int id)
         {
-            return context.Remove(user);
+            return context.Remove(id);
         }
 
         public bool Update(User user)

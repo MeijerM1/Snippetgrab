@@ -18,7 +18,7 @@ namespace Snippetgrab.data
 
         bool Insert(User user);
 
-        bool Remove(User user);
+        bool Remove(int id);
 
         bool Update(User user);
 
