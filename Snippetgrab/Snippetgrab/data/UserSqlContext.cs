@@ -222,7 +222,36 @@ namespace Snippetgrab.data
 
         public bool Update(User user)
         {
-            throw new NotImplementedException();
+            Connection = new SqlConnection(sqlCon);
+            using (Connection)
+            {
+                string query =
+                    "UPDATE [User] SET Name = @name, JoinDate = joindate, Reputation = reputation, Email = email, Password = @password, IsAdmin = @isAdmin WHERE UserID = @id";
+                using (SqlCommand command = new SqlCommand(query, Connection))
+                {
+                    DateTime dateOnly = user.JoinDate.Date;
+                    string sqlFormattedDate = dateOnly.ToString("d");
+
+                    command.Parameters.AddWithValue("name", user.Name);
+                    command.Parameters.AddWithValue("joindate", sqlFormattedDate);
+                    command.Parameters.AddWithValue("reputation", user.Reputation);
+                    command.Parameters.AddWithValue("email", user.Email);
+                    command.Parameters.AddWithValue("password", user.GetPassword());
+                    command.Parameters.AddWithValue("isAdmin", Convert.ToInt32(user.IsAdmin));
+                    command.Parameters.AddWithValue("id", user.ID);
+
+                    Connection.Open();
+                    try
+                    {
+                        command.ExecuteNonQuery();
+                    }
+                    catch (SqlException e)
+                    {
+                        return false;
+                    }
+                }
+                return true;
+            }
         }
 
         private User CreateUserFromReader(SqlDataReader reader)

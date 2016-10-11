@@ -39,8 +39,9 @@ namespace Snippetgrab
 
             if (userRepo.CheckPasssword(tbEmail.Text, tbPassword.Text))
             {
-                Form1 mainForm = new Form1();
+                MainForm mainForm = new MainForm();
                 mainForm.currentUser = userRepo.GetByEmail(tbEmail.Text);
+                mainForm.RefToLogInForm = this;
                 mainForm.Show();
                 this.Hide();
             }

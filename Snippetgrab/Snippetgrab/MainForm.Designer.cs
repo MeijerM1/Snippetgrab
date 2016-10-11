@@ -1,6 +1,6 @@
 ﻿namespace Snippetgrab
 {
-    partial class Form1
+    partial class MainForm
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.lbAccountInfoEmail = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -373,15 +373,16 @@
             // accountInfoToolStripMenuItem
             // 
             this.accountInfoToolStripMenuItem.Name = "accountInfoToolStripMenuItem";
-            this.accountInfoToolStripMenuItem.Size = new System.Drawing.Size(143, 22);
+            this.accountInfoToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.accountInfoToolStripMenuItem.Text = "Account info";
             this.accountInfoToolStripMenuItem.Click += new System.EventHandler(this.accountInfoToolStripMenuItem_Click);
             // 
             // logOffToolStripMenuItem
             // 
             this.logOffToolStripMenuItem.Name = "logOffToolStripMenuItem";
-            this.logOffToolStripMenuItem.Size = new System.Drawing.Size(143, 22);
+            this.logOffToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.logOffToolStripMenuItem.Text = "Log Off";
+            this.logOffToolStripMenuItem.Click += new System.EventHandler(this.logOffToolStripMenuItem_Click);
             // 
             // toolStripDropDownButton2
             // 
@@ -790,6 +791,7 @@
             this.cbAdminMakeAdmin.TabIndex = 1;
             this.cbAdminMakeAdmin.Text = "Is admin";
             this.cbAdminMakeAdmin.UseVisualStyleBackColor = true;
+            this.cbAdminMakeAdmin.CheckedChanged += new System.EventHandler(this.cbAdminMakeAdmin_CheckedChanged);
             // 
             // lbAdminUsers
             // 
@@ -800,7 +802,7 @@
             this.lbAdminUsers.TabIndex = 0;
             this.lbAdminUsers.SelectedIndexChanged += new System.EventHandler(this.lbAdminUsers_SelectedIndexChanged);
             // 
-            // Form1
+            // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -808,7 +810,7 @@
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.toolStrip1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "Form1";
+            this.Name = "MainForm";
             this.Text = "Snippetgrab";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.groupBox1.ResumeLayout(false);

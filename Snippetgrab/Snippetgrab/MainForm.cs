@@ -12,12 +12,13 @@ using Snippetgrab.Logic;
 
 namespace Snippetgrab
 {
-    public partial class Form1 : Form
+    public partial class MainForm : Form
     {
         public User currentUser { get; set; }
+        public Form RefToLogInForm { get; set; }
         UserRepository userRepo = new UserRepository(new UserSqlContext());
 
-        public Form1()
+        public MainForm()
         {
             InitializeComponent();
         }
@@ -113,6 +114,23 @@ namespace Snippetgrab
             else if (dialogResult == DialogResult.No)
             {
                 return;
+            }
+        }
+
+        private void logOffToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Dispose();
+            RefToLogInForm.Show();
+        }
+
+        private void cbAdminMakeAdmin_CheckedChanged(object sender, EventArgs e)
+        {
+            if (lbAdminUsers.SelectedIndex > -1)
+            {
+                User user = userRepo.GetById(lbAdminUsers.SelectedIndex + 1);
+                user.IsAdmin = cbAdminMakeAdmin.Checked;
+
+                userRepo.Update(user);
             }
         }
     }
