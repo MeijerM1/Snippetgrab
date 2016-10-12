@@ -30,9 +30,9 @@ namespace Snippetgrab
                 return;
             }            
 
-            User user = new User(tbName.Text, DateTime.Today, 0, tbEmail.Text, false, tbPassword.Text);
+            User user = new User(tbName.Text, DateTime.Today, 0, tbEmail.Text, false);
 
-            if (userRepo.Insert(user))
+            if (userRepo.Insert(user, tbPassword.Text))
             {
                 MessageBox.Show("Account succesfully created");
                 this.Hide();

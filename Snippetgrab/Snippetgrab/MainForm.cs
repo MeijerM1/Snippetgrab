@@ -69,10 +69,13 @@ namespace Snippetgrab
             {
                 User user = userRepo.GetById(selectedItem + 1);
 
-                if (user.IsAdmin)
-                    cbAdminMakeAdmin.Checked = true;
-                else
-                    cbAdminMakeAdmin.Checked = false;
+                if (user != null)
+                {
+                    if (user.IsAdmin)
+                        cbAdminMakeAdmin.Checked = true;
+                    else
+                        cbAdminMakeAdmin.Checked = false;
+                }
             }
         }
 
@@ -83,7 +86,7 @@ namespace Snippetgrab
             lbAdminUsers.Items.Clear();
             foreach (var i in users)
             {
-                lbAdminUsers.Items.Add(i.Name);
+                lbAdminUsers.Items.Add(i.Email);
             }
         }
 
@@ -107,7 +110,7 @@ namespace Snippetgrab
             {
                 if (lbAdminUsers.SelectedIndex > -1)
                 {
-                    userRepo.Remove(lbAdminUsers.SelectedIndex + 1);
+                    userRepo.Remove(lbAdminUsers.SelectedItem.ToString());
                     UpdateAdminControls();
                 }
             }
@@ -127,10 +130,16 @@ namespace Snippetgrab
         {
             if (lbAdminUsers.SelectedIndex > -1)
             {
-                User user = userRepo.GetById(lbAdminUsers.SelectedIndex + 1);
+                User user = userRepo.GetByEmail(lbAdminUsers.SelectedItem.ToString());
                 user.IsAdmin = cbAdminMakeAdmin.Checked;
 
-                userRepo.Update(user);
+                if (userRepo.Update(user))
+                    MessageBox.Show("Settings updated");
+                else
+                {
+                    MessageBox.Show("Something went wrong");
+                }
+
             }
         }
     }

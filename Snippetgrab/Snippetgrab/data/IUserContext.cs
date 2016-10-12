@@ -16,9 +16,9 @@ namespace Snippetgrab.data
 
         List<User> GetAllAdmin();
 
-        bool Insert(User user);
+        bool Insert(User user, string password);
 
-        bool Remove(int id);
+        bool Remove(string email);
 
         bool Update(User user);
 

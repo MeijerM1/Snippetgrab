@@ -14,20 +14,17 @@ namespace Snippetgrab
         public int Reputation { get; set; }
         public string Email { get; set; }
         public bool IsAdmin { get; set; }
-        // Very insecure, temporary solution
-        protected readonly string password;
 
-        public User(string name, DateTime joindate, int reputation, string email, bool isAdmin, string password)
+        public User(string name, DateTime joindate, int reputation, string email, bool isAdmin)
         {
             Name = name;
             JoinDate = joindate;
             Reputation = reputation;
             Email = email;
             IsAdmin = isAdmin;
-            this.password = password;
         }
 
-        public User(int id, string name, DateTime joindate, int reputation, string email, bool isAdmin, string password)
+        public User(int id, string name, DateTime joindate, int reputation, string email, bool isAdmin)
         {
             ID = id;
             Name = name;
@@ -35,7 +32,6 @@ namespace Snippetgrab
             Reputation = reputation;
             Email = email;
             IsAdmin = isAdmin;
-            this.password = password;
         }
 
         public void ChangePassword(string password)
@@ -56,11 +52,6 @@ namespace Snippetgrab
         public void ChangeAdminStatus(bool status)
         {
             IsAdmin = status;
-        }
-
-        public string GetPassword()
-        {
-            return password;
         }
     }
 }

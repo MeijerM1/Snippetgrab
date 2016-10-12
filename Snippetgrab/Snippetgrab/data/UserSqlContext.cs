@@ -1,27 +1,18 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Data;
 using System.Data.SqlClient;
-using System.Diagnostics.Eventing.Reader;
-using System.Globalization;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.IO;
-using System.Runtime.Remoting.Activation;
-using System.Security.Cryptography;
-using System.Windows.Forms;
+
 
 namespace Snippetgrab.data
 {
-    class UserSqlContext : IUserContext
+    public class UserSqlContext : IUserContext
     {
-        private SqlConnection Connection;
-        private string sqlCon;
+        private SqlConnection _connection;
+        private readonly string _sqlCon;
 
         public UserSqlContext()
         {
-            sqlCon = @"Data Source = (LocalDB)\MSSQLLocalDB;" +
+            _sqlCon = @"Data Source = (LocalDB)\MSSQLLocalDB;" +
                      @"AttachDbFilename=|DataDirectory|\Snippetgrab.mdf;" +
                      "Integrated Security = True;" +
                      "Connect Timeout = 30";
@@ -29,29 +20,24 @@ namespace Snippetgrab.data
 
         public bool CheckPassword(string email, string password)
         {
+            _connection = new SqlConnection(_sqlCon);            
 
-            Connection = new SqlConnection(sqlCon);
-            User user;
-            using (Connection)
+            using (_connection)
             {
-                string query = "SELECT * FROM [User] WHERE Email = @email";
-                using (SqlCommand command = new SqlCommand(query, Connection))
+                const string query = "SELECT Salt, HashedPassword FROM [User] WHERE Email = @email";
+                using (var command = new SqlCommand(query, _connection))
                 {
-                    SqlParameter param = new SqlParameter();
-                    param.ParameterName = "@email";
-                    param.Value = email;
-                    command.Parameters.Add(param);
+                    command.Parameters.AddWithValue("email", email);
 
-                    Connection.Open();
-                    using (SqlDataReader reader = command.ExecuteReader())
+                    _connection.Open();
+                    using (var reader = command.ExecuteReader())
                     {
                         while (reader.Read())
                         {
-                            user = CreateUserFromReader(reader);
-                            if (user.GetPassword() == password)
-                                return true;
-                            else
-                                return false;
+                            var passwordFromDb = Convert.ToString(reader["HashedPassword"]);
+                            var hashedPassword = GenerateSha256Hash(password, Convert.ToString(reader["Salt"]));
+
+                            return (hashedPassword == passwordFromDb);
                         }
                     }
                 }                
@@ -61,16 +47,16 @@ namespace Snippetgrab.data
 
         public List<User> GetAll()
         {
-            Connection = new SqlConnection(sqlCon);
+            _connection = new SqlConnection(_sqlCon);
 
-            List<User> result = new List<User>();
-            using (Connection)
+            var result = new List<User>();
+            using (_connection)
             {
-                string query = "SELECT * FROM [User] ORDER BY UserID";
-                using (SqlCommand command = new SqlCommand(query, Connection))
+                const string query = "SELECT * FROM [User] ORDER BY UserID";
+                using (var command = new SqlCommand(query, _connection))
                 {
-                    Connection.Open();
-                    using (SqlDataReader reader = command.ExecuteReader())
+                    _connection.Open();
+                    using (var reader = command.ExecuteReader())
                     {
                         while (reader.Read())
                         {
@@ -84,15 +70,15 @@ namespace Snippetgrab.data
 
         public List<User> GetAllAdmin()
         {
-            Connection = new SqlConnection(sqlCon);
+            _connection = new SqlConnection(_sqlCon);
 
-            List<User> result = new List<User>();
-            using (Connection)
+            var result = new List<User>();
+            using (_connection)
             {
-                string query = "SELECT * FROM User WHERE IsAdmin = 1 ORDER BY Id";
-                using (SqlCommand command = new SqlCommand(query, Connection))
+                const string query = "SELECT * FROM User WHERE IsAdmin = 1 ORDER BY Id";
+                using (var command = new SqlCommand(query, _connection))
                 {
-                    using (SqlDataReader reader = command.ExecuteReader())
+                    using (var reader = command.ExecuteReader())
                     {
                         while (reader.Read())
                         {
@@ -106,25 +92,21 @@ namespace Snippetgrab.data
 
         public User GetByEmail(string Email)
         {
-            Connection = new SqlConnection(sqlCon);
+            _connection = new SqlConnection(_sqlCon);
 
-            User user;
-            using (Connection)
+            using (_connection)
             {
-                string query = "SELECT * FROM [User] WHERE Email = @email";
-                using (SqlCommand command = new SqlCommand(query, Connection))
+                const string query = "SELECT * FROM [User] WHERE Email = @email";
+                using (var command = new SqlCommand(query, _connection))
                 {
-                    SqlParameter param = new SqlParameter();
-                    param.ParameterName = "@email";
-                    param.Value = Email;
-                    command.Parameters.Add(param);
+                    command.Parameters.AddWithValue("email", Email);
 
-                    Connection.Open();
-                    using (SqlDataReader reader = command.ExecuteReader())
+                    _connection.Open();
+                    using (var reader = command.ExecuteReader())
                     {
                         while (reader.Read())
                         {
-                            user = CreateUserFromReader(reader);
+                            var user = CreateUserFromReader(reader);
                             return user;
                         }
                     }
@@ -135,27 +117,21 @@ namespace Snippetgrab.data
 
         public User GetById(int id)
         {
-            Connection = new SqlConnection(sqlCon);
+            _connection = new SqlConnection(_sqlCon);
 
-            User user;
-            using (Connection)
+            using (_connection)
             {
-                string query = "SELECT * FROM [User] WHERE UserID = @id";
-                using (SqlCommand command = new SqlCommand(query, Connection))
+                const string query = "SELECT * FROM [User] WHERE UserID = @id";
+                using (var command = new SqlCommand(query, _connection))
                 {
-                    SqlParameter param = new SqlParameter();
-                    param.ParameterName = "@id";
-                    param.Value = id;
-                    command.Parameters.Add(param);
+                    command.Parameters.AddWithValue("id", id);
 
-                    Connection.Open();
-                    using (SqlDataReader reader = command.ExecuteReader())
+                    _connection.Open();
+                    using (var reader = command.ExecuteReader())
                     {
                         while (reader.Read())
                         {
-                            user = CreateUserFromReader(reader);
-                            string hashedPassword = GenerateSaltedHash(Encoding.UTF8.GetBytes(user.GetPassword()), );
-                            Console.WriteLine(hashedPassword);
+                            var user = CreateUserFromReader(reader);
                             return user;
                         }
                     }
@@ -164,56 +140,58 @@ namespace Snippetgrab.data
             return null;
         }
 
-        public bool Insert(User user)
+        public bool Insert(User user, string password)
         {
-            Connection = new SqlConnection(sqlCon);
-            using (Connection)
+            _connection = new SqlConnection(_sqlCon);
+
+            var salt = CreateSalt();
+            var hashedPassword = GenerateSha256Hash(password, salt);
+
+            using (_connection)
             {
-                string query =
-                    "INSERT INTO [User] (Name, JoinDate, Reputation, Email, Password, IsAdmin) VALUES (@name, @joindate, @reputation, @email, @password, @isAdmin)";
-                using (SqlCommand command = new SqlCommand(query, Connection))
+                const string query =
+                    "INSERT INTO [User] (Name, JoinDate, Reputation, Email, IsAdmin, Salt, HashedPassword) VALUES (@name, @joindate, @reputation, @email, @isAdmin, @salt, @hashedPassword)";
+                using (var command = new SqlCommand(query, _connection))
                 {
-                    DateTime dateOnly = user.JoinDate.Date;
-                    string sqlFormattedDate = dateOnly.ToString("d");
+                    var dateOnly = user.JoinDate.Date;
+                    var sqlFormattedDate = dateOnly.ToString("d");
 
                     command.Parameters.AddWithValue("name", user.Name);
                     command.Parameters.AddWithValue("joindate", sqlFormattedDate);
                     command.Parameters.AddWithValue("reputation", user.Reputation);
                     command.Parameters.AddWithValue("email", user.Email);
-                    command.Parameters.AddWithValue("password", user.GetPassword());
                     command.Parameters.AddWithValue("isAdmin", Convert.ToInt32(user.IsAdmin));
+                    command.Parameters.AddWithValue("salt", salt);
+                    command.Parameters.AddWithValue("hashedPassword", hashedPassword);
 
-                    Connection.Open();
+                    _connection.Open();
                     try
                     {
                         command.ExecuteNonQuery();
                     }
                     catch (SqlException e)
                     {
-                        // If a PK constraint was violated, handle the exception
                         if (e.Number == 2627)
                         {
                             return false;
                         }
-                        // Unexpected error: rethrow to let the caller handle it
-                        throw;
                     }
                 }
                 return true;
             }
         }
 
-        public bool Remove(int id)
+        public bool Remove(string email)
         {
-            Connection = new SqlConnection(sqlCon);
-            using (Connection)
+            _connection = new SqlConnection(_sqlCon);
+            using (_connection)
             {
-                string query = "DELETE FROM [User] WHERE UserID = @id";
-                using (SqlCommand command = new SqlCommand(query, Connection))
+                const string query = "DELETE FROM [User] WHERE Email = @email";
+                using (var command = new SqlCommand(query, _connection))
                 {
-                    command.Parameters.AddWithValue("id", id);
+                    command.Parameters.AddWithValue("email", email);
 
-                    Connection.Open();
+                    _connection.Open();
                     if (Convert.ToInt32(command.ExecuteNonQuery()) == 1)
                     {
                         return true;
@@ -225,30 +203,29 @@ namespace Snippetgrab.data
 
         public bool Update(User user)
         {
-            Connection = new SqlConnection(sqlCon);
-            using (Connection)
+            _connection = new SqlConnection(_sqlCon);
+            using (_connection)
             {
-                string query =
-                    "UPDATE [User] SET Name = @name, JoinDate = @joindate, Reputation = @reputation, Email = @email, Password = @password, IsAdmin = @isAdmin WHERE UserID = @id";
-                using (SqlCommand command = new SqlCommand(query, Connection))
+                const string query =
+                    "UPDATE [User] SET Name = @name, JoinDate = @joindate, Reputation = @reputation, Email = @email, IsAdmin = @isAdmin WHERE UserID = @id";
+                using (var command = new SqlCommand(query, _connection))
                 {
-                    DateTime dateOnly = user.JoinDate.Date;
-                    string sqlFormattedDate = dateOnly.ToString("d");
+                    var dateOnly = user.JoinDate.Date;
+                    var sqlFormattedDate = dateOnly.ToString("d");
 
                     command.Parameters.AddWithValue("name", user.Name);
                     command.Parameters.AddWithValue("joindate", sqlFormattedDate);
                     command.Parameters.AddWithValue("reputation", user.Reputation);
                     command.Parameters.AddWithValue("email", user.Email);
-                    command.Parameters.AddWithValue("password", user.GetPassword());
                     command.Parameters.AddWithValue("isAdmin", Convert.ToInt32(user.IsAdmin));
                     command.Parameters.AddWithValue("id", user.ID);
 
-                    Connection.Open();
+                    _connection.Open();
                     try
                     {
                         command.ExecuteNonQuery();
                     }
-                    catch (SqlException e)
+                    catch (SqlException)
                     {
                         return false;
                     }
@@ -257,7 +234,7 @@ namespace Snippetgrab.data
             }
         }
 
-        private User CreateUserFromReader(SqlDataReader reader)
+        private static User CreateUserFromReader(SqlDataReader reader)
         {
             return new User(
                 Convert.ToInt32(reader["UserID"]),
@@ -265,27 +242,25 @@ namespace Snippetgrab.data
                 Convert.ToDateTime(reader["JoinDate"]),
                 Convert.ToInt32(reader["Reputation"]),
                 Convert.ToString(reader["Email"]),
-                Convert.ToBoolean(reader["IsAdmin"]),
-                Convert.ToString(reader["Password"]));
+                Convert.ToBoolean(reader["IsAdmin"]));
         }
 
-        static byte[] GenerateSaltedHash(byte[] plainText, byte[] salt)
+        public string CreateSalt()
         {
-            HashAlgorithm algorithm = new SHA256Managed();
+            var rng = new System.Security.Cryptography.RNGCryptoServiceProvider();
+            var buff = new byte[16];
+            rng.GetBytes(buff);
+            return Convert.ToBase64String(buff);
+        }
 
-            byte[] plainTextWithSaltBytes =
-              new byte[plainText.Length + salt.Length];
+        public string GenerateSha256Hash(string password, string salt)
+        {
+            var bytes = System.Text.Encoding.UTF8.GetBytes(password + salt);
+            var sha256HashedString = 
+                new System.Security.Cryptography.SHA256Managed();
+            var hash = sha256HashedString.ComputeHash(bytes);
 
-            for (int i = 0; i < plainText.Length; i++)
-            {
-                plainTextWithSaltBytes[i] = plainText[i];
-            }
-            for (int i = 0; i < salt.Length; i++)
-            {
-                plainTextWithSaltBytes[plainText.Length + i] = salt[i];
-            }
-
-            return algorithm.ComputeHash(plainTextWithSaltBytes);
+            return System.Text.Encoding.UTF8.GetString(hash);
         }
     }
 }

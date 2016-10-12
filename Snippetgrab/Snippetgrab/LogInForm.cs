@@ -14,12 +14,12 @@ namespace Snippetgrab
 {
     public partial class LogInForm : Form
     {
-        private UserRepository userRepo;
+        private readonly UserRepository _userRepo;
 
         public LogInForm()
         {
             InitializeComponent();
-            userRepo = new UserRepository(new UserSqlContext());
+            _userRepo = new UserRepository(new UserSqlContext());
         }
 
         private void btLogIn_Click(object sender, EventArgs e)
@@ -37,10 +37,10 @@ namespace Snippetgrab
                 return;
             }
 
-            if (userRepo.CheckPasssword(tbEmail.Text, tbPassword.Text))
+            if (_userRepo.CheckPasssword(tbEmail.Text, tbPassword.Text))
             {
-                MainForm mainForm = new MainForm();
-                mainForm.currentUser = userRepo.GetByEmail(tbEmail.Text);
+                var mainForm = new MainForm();
+                mainForm.currentUser = _userRepo.GetByEmail(tbEmail.Text);
                 mainForm.RefToLogInForm = this;
                 mainForm.Show();
                 this.Hide();
@@ -53,7 +53,7 @@ namespace Snippetgrab
 
         private void btRegister_Click(object sender, EventArgs e)
         {
-            RegisterForm regForm = new RegisterForm();
+            var regForm = new RegisterForm();
             regForm.ShowDialog();
         }
     }

@@ -9,51 +9,51 @@ namespace Snippetgrab.Logic
 {
     public class UserRepository
     {
-        private IUserContext context;
+        private readonly IUserContext _context;
         
         public UserRepository(IUserContext context)
         {
-            this.context = context;
+            this._context = context;
         }
 
         public List<User> GetAll()
         {
-            return context.GetAll();
+            return _context.GetAll();
         }
 
         public List<User> GetAllAdmin()
         {
-            return context.GetAllAdmin();
+            return _context.GetAllAdmin();
         }
 
         public User GetById(int id)
         {
-            return context.GetById(id);
+            return _context.GetById(id);
         }
 
         public User GetByEmail(string email)
         {
-            return context.GetByEmail(email);
+            return _context.GetByEmail(email);
         }
 
-        public bool Insert(User user)
+        public bool Insert(User user, string password)
         {
-            return context.Insert(user);
+            return _context.Insert(user, password);
         }
 
-        public bool Remove(int id)
+        public bool Remove(string email)
         {
-            return context.Remove(id);
+            return _context.Remove(email);
         }
 
         public bool Update(User user)
         {
-            return context.Update(user);
+            return _context.Update(user);
         }
 
         public bool CheckPasssword(string email, string password)
         {
-            return context.CheckPassword(email, password);
+            return _context.CheckPassword(email, password);
         }
     }
 }

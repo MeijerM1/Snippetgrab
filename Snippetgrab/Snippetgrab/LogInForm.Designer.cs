@@ -30,12 +30,12 @@
         {
             this.tbEmail = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btRegister = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.btLogIn = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.tbPassword = new System.Windows.Forms.TextBox();
-            this.btRegister = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -45,7 +45,6 @@
             this.tbEmail.Name = "tbEmail";
             this.tbEmail.Size = new System.Drawing.Size(169, 20);
             this.tbEmail.TabIndex = 0;
-            this.tbEmail.Text = "max1_meijer@hotmail.com";
             // 
             // groupBox1
             // 
@@ -62,6 +61,16 @@
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Log in";
+            // 
+            // btRegister
+            // 
+            this.btRegister.Location = new System.Drawing.Point(86, 125);
+            this.btRegister.Name = "btRegister";
+            this.btRegister.Size = new System.Drawing.Size(75, 23);
+            this.btRegister.TabIndex = 6;
+            this.btRegister.Text = "Register";
+            this.btRegister.UseVisualStyleBackColor = true;
+            this.btRegister.Click += new System.EventHandler(this.btRegister_Click);
             // 
             // label3
             // 
@@ -107,16 +116,6 @@
             this.tbPassword.PasswordChar = '*';
             this.tbPassword.Size = new System.Drawing.Size(169, 20);
             this.tbPassword.TabIndex = 1;
-            // 
-            // btRegister
-            // 
-            this.btRegister.Location = new System.Drawing.Point(86, 125);
-            this.btRegister.Name = "btRegister";
-            this.btRegister.Size = new System.Drawing.Size(75, 23);
-            this.btRegister.TabIndex = 6;
-            this.btRegister.Text = "Register";
-            this.btRegister.UseVisualStyleBackColor = true;
-            this.btRegister.Click += new System.EventHandler(this.btRegister_Click);
             // 
             // LogInForm
             // 
